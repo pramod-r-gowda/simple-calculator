@@ -1,0 +1,23 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	<link rel="stylesheet" type="text/css" href="{% static 'css/styles.css'%}">
+</head>
+<body>
+<h1>Simple Calculator</h1>
+<form method="post" action="/operate/">
+	 {% csrf_token %}
+	<input type="text" name="num1">Num1
+	<br>
+	<input type="text" name="num2">Num2<br>
+	<input type="submit" value="Evaluate">
+	<h2>Addition:{{ add }}</h2>
+	<h2>Subtraction:{{ sub }}</h2>
+	<h2>Multiplication:{{ mul }}</h2>
+	<h2>Division:{{ div }}</h2>
+	<h2>Remainder/Modulus:{{ mod }}</h2>
+</form>
+</body>
+</html>
